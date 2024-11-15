@@ -15,20 +15,23 @@ public class Usuario {
     private String cpf;
     private String sexo;
     private String senha;
+    private String cargo;
     
     public Usuario(){}
 
-    public Usuario(String Nome, int idade, String cpf,String sexo, String senha) {
+    public Usuario(String Nome, int idade, String cpf,String sexo,String cargo, String senha) {
         this.Nome = Nome;
         this.idade = idade;
         this.cpf = cpf;
         this.sexo = sexo;
+        this.cargo = cargo;
         this.senha = senha;
     }
-    public Usuario(String Nome, int idade,String sexo, String cpf) {
+    public Usuario(String Nome, int idade,String sexo,String cargo, String cpf) {
         this.Nome = Nome;
         this.idade = idade;
         this.sexo = sexo;
+        this.cargo = cargo;
         this.cpf = cpf;
     }
     
@@ -72,6 +75,14 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
     
     

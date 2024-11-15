@@ -51,6 +51,15 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     // Mover o foco para o campo de senha
+                    txtCargo.requestFocus();
+                }
+            }
+        });
+        txtCargo.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    // Mover o foco para o campo de senha
                     txtSenha.requestFocus();
                 }
             }
@@ -92,6 +101,8 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
         btDeletar = new javax.swing.JButton();
         cbSexo = new javax.swing.JComboBox<String>();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtCargo = new javax.swing.JTextField();
 
         jLabel1.setText("CPF");
 
@@ -131,7 +142,7 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Usuario", "Idade", "CPF", "Sexo"
+                "Usuario", "Idade", "CPF", "Sexo", "Cargo"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -161,35 +172,42 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Sexo");
 
+        jLabel6.setText("Cargo");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(btMostrarInfo)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btAlterar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btDeletar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                            .addComponent(btnSalvar))
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel4)
-                        .addComponent(txtUsuario)
-                        .addComponent(txtIdade)
-                        .addComponent(txtCpf, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(jLabel5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(88, 88, 88)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(txtCargo)))
+                    .addComponent(txtSenha)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btMostrarInfo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btAlterar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btDeletar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                        .addComponent(btnSalvar))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4)
+                    .addComponent(txtUsuario)
+                    .addComponent(txtIdade)
+                    .addComponent(txtCpf, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,9 +227,13 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
                         .addGap(9, 9, 9)
                         .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -291,16 +313,17 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
             String usuarioNome = txtUsuario.getText().trim();
             String cpf = txtCpf.getText().trim();
             String senha = new String(txtSenha.getPassword());
+            String cargo = txtCargo.getText().trim();
             String sexo = cbSexo.getSelectedItem().toString();
 
             if (editIndex == -1) {
                 // Novo cadastro
-                Usuario usuario = new Usuario(usuarioNome, idade, cpf, sexo, senha);
+                Usuario usuario = new Usuario(usuarioNome, idade, cpf, sexo,cargo, senha);
                 usuarios.add(usuario);
 
                 // Atualiza a tabela
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                model.addRow(new Object[]{usuarioNome, idade, cpf, sexo});
+                model.addRow(new Object[]{usuarioNome, idade, cpf, sexo, cargo});
                 JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
             } else {
                 // Alteração de cadastro
@@ -309,6 +332,7 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
                 usuario.setIdade(idade);
                 usuario.setCpf(cpf);
                 usuario.setSexo(sexo);
+                usuario.setCargo(cargo);
                 usuario.setSenha(senha);
 
                 // Atualiza a tabela
@@ -317,6 +341,7 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
                 model.setValueAt(idade, editIndex, 1);
                 model.setValueAt(cpf, editIndex, 2);
                 model.setValueAt(sexo, editIndex, 3);
+                model.setValueAt(cargo, editIndex, 4);
 
                 JOptionPane.showMessageDialog(null, "Usuário alterado com sucesso!");
                 editIndex = -1; // Reseta o índice após edição.
@@ -326,11 +351,13 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
             txtUsuario.setText("");
             txtIdade.setText("");
             txtCpf.setText("");
+            txtCargo.setText("");
             txtSenha.setText("");
 
             txtUsuario.setText("");
             txtIdade.setText("");
             txtCpf.setText("");
+            txtCargo.setText("");
             txtSenha.setText("");
 
         } catch (NumberFormatException e) {
@@ -364,6 +391,7 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
                 txtIdade.setText(String.valueOf(usuario.getIdade()));
                 txtCpf.setText(usuario.getCpf());
                 cbSexo.setSelectedItem(usuario.getSexo());
+                txtCargo.setText(usuario.getCargo());
                 txtSenha.setText(usuario.getSenha());
 
                 editIndex = index; // Armazena o índice para edição.
@@ -396,9 +424,11 @@ public class CadastroUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtIdade;
     private javax.swing.JPasswordField txtSenha;
